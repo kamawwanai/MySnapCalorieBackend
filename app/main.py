@@ -8,6 +8,7 @@ from app.routers.meals import router as meals_router
 from app.routers.onboarding import router as onboarding_plan_router
 from app.routers.plans import router as plans_router
 from app.routers.profiles import router as profiles_router
+from app.routers.classification import router as classification_router
 
 # для разработки: создаём таблицы по описанным моделям
 Base.metadata.create_all(bind=engine)
@@ -42,3 +43,4 @@ app.include_router(meals_router)
 app.include_router(onboarding_plan_router)
 app.include_router(plans_router, tags=["Plans"])
 app.include_router(profiles_router)
+app.include_router(classification_router, prefix="/classification", tags=["Classification"])
